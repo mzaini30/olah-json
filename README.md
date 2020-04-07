@@ -1,2 +1,3 @@
-# olah-json
-JSON library untuk client side
+# Olah JSON
+
+Masih versi alpha
