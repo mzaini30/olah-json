@@ -10,28 +10,37 @@ class OlahJson {
 	query(querynya){
 		this.querynya = querynya
 		var pisahTanya = this.querynya.split('?')
-
-		// bagian filter
 		var sebelumTanya = pisahTanya[0]
 		var setelahTanya = pisahTanya[1]
-
-		var pisahSebelumTanya = sebelumTanya.split('/')
 		
 		// bagian selektor
+		var pisahSebelumTanya = sebelumTanya.split('/')
 		var judulTable = pisahSebelumTanya[0]
 		var kunci = pisahSebelumTanya[1]
-		
-		// bagian selektor
 		var selektor = eval(`this.json.${judulTable}`)
 		if (kunci){
 			selektor = selektor.filter(data => data.id == kunci)
 		}
 
+		// bagian filter
+		var pisahDan = setelahTanya.split('&')
+		for (var n in pisahDan){
+			pisahDan[n] = pisahDan[n].split('=')
+		}
+		for (var x of pisahDan){
+			if (!x[0].startsWith('_')){ // jika nggak diawali dengan _
+				selektor = selektor.filter(data => eval(`data.${x[0]}`) == x[1])
+			}
+		}
+		this.isiIsian = pisahDan
+
+		// hasilnya
 		this.jsonBaru = selektor
 		return this
 	} 
 
 	get(){
 		return this.jsonBaru
+		// return this.isiIsian
 	}
 }
