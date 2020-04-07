@@ -1,1 +1,1 @@
-pug . -w
+pug index.pug -w -o . & pug olahJson.min.pug -w -o .. -E js

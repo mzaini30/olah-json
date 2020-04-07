@@ -1,4 +1,4 @@
-data = {
+var data = {
   "santri": [
     {
       "id": 1,
