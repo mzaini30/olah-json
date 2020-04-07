@@ -1,4 +1,6 @@
-new VConsole
+// new VConsole
 
 var datanya = new OlahJson(data)
-console.log(datanya.query("halo").selesai())
+
+var hasilOlahan = datanya.query('santri?alamat=Samarinda').selesai()
+console.log(hasilOlahan)
