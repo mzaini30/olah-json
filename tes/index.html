@@ -43,42 +43,48 @@ var OlahJson = function () {
 				});
 			}
 
-			// bagian filter
-			var pisahDan = setelahTanya.split('&');
-			for (var n in pisahDan) {
-				pisahDan[n] = pisahDan[n].split('=');
-			}
-			var _iteratorNormalCompletion = true;
-			var _didIteratorError = false;
-			var _iteratorError = undefined;
-
-			try {
-				for (var _iterator = pisahDan[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-					var x = _step.value;
-
-					if (!x[0].startsWith('_')) {
-						// jika nggak diawali dengan _
-						selektor = selektor.filter(function (data) {
-							return eval('data.' + x[0]) == x[1];
-						});
-					}
+			if (setelahTanya) {
+				// bagian filter
+				var pisahDan = setelahTanya.split('&');
+				for (var n in pisahDan) {
+					pisahDan[n] = pisahDan[n].split('=');
 				}
-			} catch (err) {
-				_didIteratorError = true;
-				_iteratorError = err;
-			} finally {
+				var _iteratorNormalCompletion = true;
+				var _didIteratorError = false;
+				var _iteratorError = undefined;
+
 				try {
-					if (!_iteratorNormalCompletion && _iterator.return) {
-						_iterator.return();
+					for (var _iterator = pisahDan[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						var x = _step.value;
+
+						if (!x[0].startsWith('_')) {
+							// jika nggak diawali dengan _
+							// selektor = selektor.filter(data => eval(`data.${x[0]}`) == x[1])
+							selektor = selektor.filter(function (data) {
+								return eval('data.' + x[0] + '.toString().toLowerCase().includes(\'' + x[1] + '\'.toString().toLowerCase())');
+							});
+						} else {
+							// jika diawali dengan _
+							if (x[0] == '_q') {}
+						}
 					}
+				} catch (err) {
+					_didIteratorError = true;
+					_iteratorError = err;
 				} finally {
-					if (_didIteratorError) {
-						throw _iteratorError;
+					try {
+						if (!_iteratorNormalCompletion && _iterator.return) {
+							_iterator.return();
+						}
+					} finally {
+						if (_didIteratorError) {
+							throw _iteratorError;
+						}
 					}
 				}
-			}
 
-			this.isiIsian = pisahDan;
+				this.isiIsian = pisahDan;
+			}
 
 			// hasilnya
 			this.jsonBaru = selektor;
@@ -93,7 +99,7 @@ var OlahJson = function () {
 	}]);
 
 	return OlahJson;
-}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri?nama=zen").get();console.log(hasilOlahan);
+}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/2").get();console.log(hasilOlahan);
     </script>
   </body>
 </html>

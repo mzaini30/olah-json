@@ -22,17 +22,24 @@ class OlahJson {
 			selektor = selektor.filter(data => data.id == kunci)
 		}
 
-		// bagian filter
-		var pisahDan = setelahTanya.split('&')
-		for (var n in pisahDan){
-			pisahDan[n] = pisahDan[n].split('=')
-		}
-		for (var x of pisahDan){
-			if (!x[0].startsWith('_')){ // jika nggak diawali dengan _
-				selektor = selektor.filter(data => eval(`data.${x[0]}`) == x[1])
+		if (setelahTanya){
+			// bagian filter
+			var pisahDan = setelahTanya.split('&')
+			for (var n in pisahDan){
+				pisahDan[n] = pisahDan[n].split('=')
 			}
+			for (var x of pisahDan){
+				if (!x[0].startsWith('_')){ // jika nggak diawali dengan _
+					// selektor = selektor.filter(data => eval(`data.${x[0]}`) == x[1])
+					selektor = selektor.filter(data => eval(`data.${x[0]}.toString().toLowerCase().includes('${x[1]}'.toString().toLowerCase())`))
+				} else { // jika diawali dengan _
+					if (x[0] == '_q'){
+	
+					}
+				}
+			}
+			this.isiIsian = pisahDan
 		}
-		this.isiIsian = pisahDan
 
 		// hasilnya
 		this.jsonBaru = selektor
