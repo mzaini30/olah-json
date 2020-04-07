@@ -28,7 +28,7 @@ class OlahJson {
 		return this
 	} 
 
-	selesai(){
+	get(){
 		return this.jsonBaru
 	}
 }
