@@ -10,30 +10,30 @@ Kalau JSON Server kan itu untuk sisi server. Maka, Olah JSON ini adalah dari sis
 
 ```javascript
 var data = {
-	"santri": [
-		{
-			"id": 1,
-			"nama": "Zen",
-			"alamat": "Samarinda"
-		},
-		{
-			"id": 2,
-			"nama": "Yani",
-			"alamat": "Samarinda"
-		},
-		{
-			"id": 3,
-			"nama": "Anggi",
-			"alamat": "Samarinda"
-		}
-	],
-	"lomba": [
-		{
-			"id": 1,
-			"lomba": "balap karung",
-			"santri_id": 1
-		}
-	]
+  "santri": [
+    {
+      "id": 1,
+      "nama": "Zen",
+      "alamat": "Samarinda"
+    },
+    {
+      "id": 2,
+      "nama": "Yani",
+      "alamat": "Samarinda"
+    },
+    {
+      "id": 3,
+      "nama": "Anggi",
+      "alamat": "Samarinda"
+    }
+  ],
+  "lomba": [
+    {
+      "id": 1,
+      "lomba": "balap karung",
+      "santri_id": 1
+    }
+  ]
 }
 ```
 
@@ -46,21 +46,21 @@ var hasilOlahan = datanya.query('santri?nama=zen&alamat=samarinda&id=1').get()
 
 // Hasil:
 // [
-// 	{
-// 		"id": 1,
-// 		"nama": "Zen",
-// 		"alamat": "Samarinda"
-// 	}
+//   {
+//     "id": 1,
+//     "nama": "Zen",
+//     "alamat": "Samarinda"
+//   }
 // ]
 
 // Contoh lain: santri/2
 // Hasil:
 // [
-// 	{
-// 		"id": 2,
-// 		"nama": "Yani",
-// 		"alamat": "Samarinda"
-// 	}
+//   {
+//     "id": 2,
+//     "nama": "Yani",
+//     "alamat": "Samarinda"
+//   }
 // ]
 ```
 
