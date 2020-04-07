@@ -1,5 +1,4 @@
 new VConsole
 
-var hitung = new Matematika
-var baru = hitung.tambah(5).tambah(6).selesai()
-console.log(baru)
+var datanya = new OlahJson(data)
+console.log(datanya.query("halo").selesai())

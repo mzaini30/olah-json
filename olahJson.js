@@ -1,16 +1,12 @@
-class Matematika {
-  constructor(){
-    this.jumlah = 0
+class OlahJson {
+  constructor(json){
+    this.json = json
   }
-  tambah(angka){
-    this.jumlah += angka
+  query(querynya){
+    this.querynya = querynya
     return this
   }
   selesai(){
-    return this.jumlah
+    return this.querynya
   }
 }
-
-// bilangan = new Matematika
-// console.log(bilangan.tambah(3).tambah(2).selesai())
-// Hasilnya: 5
