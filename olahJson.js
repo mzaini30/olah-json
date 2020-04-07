@@ -50,4 +50,16 @@ class OlahJson {
 		return this.jsonBaru
 		// return this.isiIsian
 	}
+
+	delete(){
+
+	}
+
+	put(dataBaru){
+
+	}
+
+	post(dataBaru){
+		
+	}
 }
