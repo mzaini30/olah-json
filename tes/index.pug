@@ -3,4 +3,10 @@ html
   head 
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+    title Olah JSON
   body
+    script(src="vconsole/vconsole.min.js")
+    script
+      include:uglify-js:babel(presets=["env"]) data.js
+      include:uglify-js:babel(presets=["env"]) ../olahJson.js
+      include:uglify-js:babel(presets=["env"]) app.js
