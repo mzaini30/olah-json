@@ -11,17 +11,20 @@ class OlahJson {
 		this.querynya = querynya
 		var pisahTanya = this.querynya.split('?')
 
+		// bagian filter
 		var sebelumTanya = pisahTanya[0]
-		var setelahTanya = pisahTanya[1] // ini bagian filter
+		var setelahTanya = pisahTanya[1]
 
 		var pisahSebelumTanya = sebelumTanya.split('/')
 		
-		var judulTable = pisahSebelumTanya[0] // ini judul table, contoh: santri
-		var kunci = pisahSebelumTanya[1] // ini kunci, contoh: 1
+		// bagian selektor
+		var judulTable = pisahSebelumTanya[0]
+		var kunci = pisahSebelumTanya[1]
 		
+		// bagian selektor
 		var selektor = eval(`this.json.${judulTable}`)
 		if (kunci){
-
+			selektor = selektor.filter(data => data.id == kunci)
 		}
 
 		this.jsonBaru = selektor
