@@ -6,6 +6,10 @@ Proyek ini terinspirasi dari [typicode/json-server](https://github.com/typicode/
 
 Kalau JSON Server kan itu untuk sisi server. Maka, Olah JSON ini adalah dari sisi client
 
+## Install
+
+- [For development](olahJson.js) - masih pakai ES2015+
+
 ## Struktur JSON
 
 ```javascript
