@@ -70,7 +70,7 @@ var hasilOlahan = datanya.query('santri?nama=zen&alamat=samarinda&id=1').get()
 //   }
 // ]
 
-// Contoh lain: santri/2
+// Contoh lain: "santri/2"
 // Hasil:
 // [
 //   {
