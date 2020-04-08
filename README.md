@@ -11,6 +11,18 @@ Kalau JSON Server kan itu untuk sisi server. Maka, Olah JSON ini adalah dari sis
 - [For development](olahJson.js) - masih pakai ES2015+
 - [For production](olahJson.min.js) - sudah diolah pakai Babel dan minify dengan Uglify JS
 
+Lalu, panggil dengan:
+
+```html
+<script src='olahJson.js'></script>
+```
+
+Atau
+
+```html
+<script src='olahJson.min.js'></script>
+```
+
 ## Struktur JSON
 
 ```javascript
