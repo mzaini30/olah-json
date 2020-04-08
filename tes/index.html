@@ -82,23 +82,28 @@ var OlahJson = function () {
 						}
 					}
 				}
-
-				this.isiIsian = pisahDan;
 			}
 
 			// hasilnya
 			this.jsonBaru = selektor;
+			this.jsonString = JSON.stringify(this.json);
+
+			// ini untuk delete
+			this.jsonBaruString = JSON.stringify(this.jsonBaru).substring(1);
+			this.jsonBaruString = this.jsonBaruString.substring(0, this.jsonBaruString.length - 1);
+
 			return this;
 		}
 	}, {
 		key: 'get',
 		value: function get() {
 			return this.jsonBaru;
-			// return this.isiIsian
 		}
 	}, {
 		key: 'delete',
-		value: function _delete() {}
+		value: function _delete() {
+			return this.jsonBaru;
+		}
 	}, {
 		key: 'put',
 		value: function put(dataBaru) {}
@@ -108,7 +113,7 @@ var OlahJson = function () {
 	}]);
 
 	return OlahJson;
-}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/2").get();console.log(hasilOlahan);
+}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/2").delete();console.log(hasilOlahan);
     </script>
   </body>
 </html>

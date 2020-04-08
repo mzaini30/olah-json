@@ -38,21 +38,25 @@ class OlahJson {
 					}
 				}
 			}
-			this.isiIsian = pisahDan
 		}
 
 		// hasilnya
 		this.jsonBaru = selektor
+		this.jsonString = JSON.stringify(this.json)
+
+		// ini untuk delete
+		this.jsonBaruString = JSON.stringify(this.jsonBaru).substring(1)
+		this.jsonBaruString = this.jsonBaruString.substring(0, this.jsonBaruString.length - 1)
+
 		return this
 	} 
 
 	get(){
 		return this.jsonBaru
-		// return this.isiIsian
 	}
 
 	delete(){
-
+		return this.jsonBaru
 	}
 
 	put(dataBaru){
@@ -60,6 +64,6 @@ class OlahJson {
 	}
 
 	post(dataBaru){
-		
+
 	}
 }
