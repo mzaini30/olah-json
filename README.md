@@ -9,6 +9,7 @@ Kalau JSON Server kan itu untuk sisi server. Maka, Olah JSON ini adalah dari sis
 ## Install
 
 - [For development](olahJson.js) - masih pakai ES2015+
+- [For production](olahJson.min.js) - sudah diolah pakai Babel dan minify dengan Uglify JS
 
 ## Struktur JSON
 
