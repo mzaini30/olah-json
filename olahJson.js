@@ -68,7 +68,10 @@ class OlahJson {
 	}
 
 	post(dataPost){
-		var panjangnya = 
+		var panjangnya = this.json.length()
+		
+		this.json = panjangnya
+		return this
 	} 
 
 	get(){
