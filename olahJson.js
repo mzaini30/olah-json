@@ -54,14 +54,14 @@ class OlahJson {
 
 	delete(){
 		// delete selesai
-		this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',').replace(/,\]/g, ']').replace(/\[,/g, '[') // memperbaiki sintaks json
-		this.teksPemotongan = JSON.parse(this.teksPemotongan)
-		return this.teksPemotongan
+		var teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',').replace(/,\]/g, ']').replace(/\[,/g, '[') // memperbaiki sintaks json
+		teksPemotongan = JSON.parse(teksPemotongan)
+		return teksPemotongan
 	}
 
 	put(dataPut){
-		this.dataPut = dataPut
-		return this.dataPut
+		var pisah = this.querynya.split('/')[1]
+		return pisah
 	}
 
 	post(dataPost){
