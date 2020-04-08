@@ -79,19 +79,28 @@ santri/1
 ## GET
 
 ```javascript
-olah.query('santri').get()
-olah.query('santri/1').get()
-olah.query('santri?id=1').get()
-olah.query('santri?id=1&nama=zen').get()
-olah.query('santri/1?id=1').get()
-olah.query('santri/1?id=1&nama=zen').get()
+data.query('santri').get()
+data.query('santri/1').get()
+data.query('santri?id=1').get()
+data.query('santri?id=1&nama=zen').get()
+data.query('santri/1?id=1').get()
+data.query('santri/1?id=1&nama=zen').get()
 ````
 
 ## DELETE
 
 ```javascript
-olah.query('santri').delete()
-olah.query('santri/1').delete()
+data.query('santri').delete()
+data.query('santri/1').delete()
+```
+
+## PUT
+
+```javascript
+data.query('santri/10').put({
+  'nama': 'Kucing',
+  'alamat': 'Balikpapan'
+})
 ```
 
 ## TODO
