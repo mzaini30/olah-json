@@ -71,6 +71,24 @@ santri?nama=zen
 santri/1
 ```
 
+## GET
+
+```javascript
+olah.query('santri').get()
+olah.query('santri/1').get()
+olah.query('santri?id=1').get()
+olah.query('santri?id=1&nama=zen').get()
+olah.query('santri/1?id=1').get()
+olah.query('santri/1?id=1&nama=zen').get()
+````
+
+## DELETE
+
+```javascript
+olah.query('santri').delete()
+olah.query('santri/1').delete()
+```
+
 ## TODO
 
 - [ ] Filter
