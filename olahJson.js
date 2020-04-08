@@ -1,7 +1,3 @@
-// contoh query
-// santri/1
-// santri?nama=Zen
-
 class OlahJson {
 	constructor(json){
 		this.json = json
