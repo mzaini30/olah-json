@@ -1,6 +1,6 @@
 # Olah JSON
 
-> Masih versi alpha
+> Versi Beta
 
 Proyek ini terinspirasi dari [typicode/json-server](https://github.com/typicode/json-server)
 
