@@ -106,14 +106,17 @@ var OlahJson = function () {
 		}
 	}, {
 		key: 'put',
-		value: function put(dataBaru) {}
+		value: function put(dataPut) {
+			this.dataPut = dataPut;
+			return this.dataPut;
+		}
 	}, {
 		key: 'post',
-		value: function post(dataBaru) {}
+		value: function post(dataPost) {}
 	}]);
 
 	return OlahJson;
-}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/1").delete();console.log(hasilOlahan);
+}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/1").put({nama:"Kucing",alamat:"Balikpapan"});console.log(hasilOlahan);
     </script>
   </body>
 </html>

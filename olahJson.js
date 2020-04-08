@@ -59,11 +59,12 @@ class OlahJson {
 		return this.teksPemotongan
 	}
 
-	put(dataBaru){
-
+	put(dataPut){
+		this.dataPut = dataPut
+		return this.dataPut
 	}
 
-	post(dataBaru){
+	post(dataPost){
 
 	}
 }
