@@ -68,9 +68,21 @@ class OlahJson {
 	}
 
 	post(dataPost){
-		var panjangnya = this.json.length()
-		
-		this.json = panjangnya
+		// post selesai
+		var panjangnya = this.json.length
+		var idTerakhir = eval(`this.json[${panjangnya - 1}].id`)
+		var idBaru = idTerakhir + 1
+		dataPost['id'] = idBaru
+		var elemenBaruString = JSON.stringify(dataPost)
+		var selektor = this.json.filter(data => data.id == idTerakhir)
+		var selektorString = JSON.stringify(selektor).substring(1)
+		selektorString = selektorString.substring(0, selektorString.length - 1)
+		var tambahkan = `${selektorString},${elemenBaruString}`
+
+		var ubah = this.jsonString.replace(selektorString, tambahkan)
+		ubah = JSON.parse(ubah)
+
+		this.json = ubah
 		return this
 	} 
 
