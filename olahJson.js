@@ -45,18 +45,14 @@ class OlahJson {
 		this.jsonBaruString = this.jsonBaruString.substring(0, this.jsonBaruString.length - 1)
 
 		return this
-	} 
-
-	get(){
-		// get selesai
-		return this.jsonBaru
 	}
 
 	delete(){
 		// delete selesai
 		var teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',').replace(/,\]/g, ']').replace(/\[,/g, '[') // memperbaiki sintaks json
 		teksPemotongan = JSON.parse(teksPemotongan)
-		return teksPemotongan
+		this.json = teksPemotongan
+		return this
 	}
 
 	put(dataPut){
@@ -66,10 +62,16 @@ class OlahJson {
 		dataPut = JSON.stringify(dataPut)
 		var dataBaru = this.jsonString.replace(this.jsonBaruString, dataPut)
 		dataBaru = JSON.parse(dataBaru)
-		return dataBaru
+		this.json = dataBaru
+		return this
 	}
 
 	post(dataPost){
 
+	} 
+
+	get(){
+		// get selesai
+		return this.json
 	}
 }

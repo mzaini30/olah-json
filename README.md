@@ -90,8 +90,8 @@ data.query('santri/1?id=1&nama=zen').get()
 ## DELETE
 
 ```javascript
-data.query('santri').delete()
-data.query('santri/1').delete()
+data.query('santri').delete().get()
+data.query('santri/1').delete().get()
 ```
 
 ## PUT
@@ -100,8 +100,26 @@ data.query('santri/1').delete()
 data.query('santri/10').put({
   'nama': 'Kucing',
   'alamat': 'Balikpapan'
-})
+}).get()
 ```
+
+## Chain method
+
+Mendukung chain method
+
+Caranya, gunakan `.query()` kemudian `post/put/delete`, lalu di ujung semua itu, pakai `get()`.
+
+Contoh:
+
+```javascript
+datanya
+.query('lomba').delete()
+.query('santri/3').delete()
+.query('santri/1').put({
+  'nama': 'Yani',
+  'alamat': 'Loa Bakung'
+}).get()
+````
 
 ## TODO
 
@@ -110,3 +128,4 @@ data.query('santri/10').put({
 - [x] PUT
 - [x] DELETE
 - [ ] POST
+- [x] Chain method
