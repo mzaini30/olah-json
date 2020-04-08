@@ -52,11 +52,15 @@ class OlahJson {
 	} 
 
 	get(){
+		// get selesai
 		return this.jsonBaru
 	}
 
 	delete(){
-		return this.jsonBaru
+		// delete selesai
+		this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',')
+		this.teksPemotongan = JSON.parse(this.teksPemotongan)
+		return this.teksPemotongan
 	}
 
 	put(dataBaru){

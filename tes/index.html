@@ -97,12 +97,16 @@ var OlahJson = function () {
 	}, {
 		key: 'get',
 		value: function get() {
+			// get selesai
 			return this.jsonBaru;
 		}
 	}, {
 		key: 'delete',
 		value: function _delete() {
-			return this.jsonBaru;
+			// delete selesai
+			this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',');
+			this.teksPemotongan = JSON.parse(this.teksPemotongan);
+			return this.teksPemotongan;
 		}
 	}, {
 		key: 'put',
@@ -113,7 +117,7 @@ var OlahJson = function () {
 	}]);
 
 	return OlahJson;
-}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/2").delete();console.log(hasilOlahan);
+}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri").delete();console.log(hasilOlahan);
     </script>
   </body>
 </html>
