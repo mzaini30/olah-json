@@ -61,7 +61,8 @@ class OlahJson {
 
 	put(dataPut){
 		var pisah = this.querynya.split('/')[1]
-		return pisah
+		dataPut['id'] = Number(pisah)
+		return dataPut
 	}
 
 	post(dataPost){

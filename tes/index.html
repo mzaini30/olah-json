@@ -108,7 +108,9 @@ var OlahJson = function () {
 		key: 'put',
 		value: function put(dataPut) {
 			var pisah = this.querynya.split('/')[1];
-			return pisah;
+			dataPut['id'] = Number(pisah);
+			var yangDipotong = dataPut.toString();
+			return yangDipotong;
 		}
 	}, {
 		key: 'post',
