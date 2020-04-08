@@ -44,6 +44,7 @@ class OlahJson {
 		this.jsonBaruString = JSON.stringify(this.jsonBaru).substring(1)
 		this.jsonBaruString = this.jsonBaruString.substring(0, this.jsonBaruString.length - 1)
 
+		this.json = this.jsonBaru
 		return this
 	}
 
@@ -67,7 +68,7 @@ class OlahJson {
 	}
 
 	post(dataPost){
-
+		var panjangnya = 
 	} 
 
 	get(){

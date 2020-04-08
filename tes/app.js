@@ -7,13 +7,7 @@ var datanya = new OlahJson(data)
 // 	'alamat': 'Klaten'
 // }).get()
 
-var hasilOlahan = datanya
-.query('lomba').delete()
-.query('santri/3').delete()
-.query('santri/1').put({
-	'nama': 'Yani',
-	'alamat': 'Loa Bakung'
-}).get()
+var hasilOlahan = datanya.query('santri').get()
 
 // var baruLagi = new OlahJson(hasilOlahan)
 // var hasil = baruLagi.query('lomba/4').put({
