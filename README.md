@@ -83,13 +83,6 @@ var hasilOlahan = datanya.query('santri?nama=zen&alamat=samarinda').get() // pak
 console.log(hasilOlahan)
 ```
 
-## Contoh query yang lain
-
-```
-santri?nama=zen
-santri/1
-```
-
 ## GET
 
 ```javascript
