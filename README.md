@@ -92,4 +92,7 @@ olah.query('santri/1').delete()
 ## TODO
 
 - [ ] Filter
-- [ ] UPDATE, PUT, DELETE
+- [ ] UPDATE
+- [ ] PUT
+- [x] DELETE
+- [ ] POST
