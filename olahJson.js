@@ -60,9 +60,13 @@ class OlahJson {
 	}
 
 	put(dataPut){
+		// put selesai
 		var pisah = this.querynya.split('/')[1]
 		dataPut['id'] = Number(pisah)
-		return dataPut
+		dataPut = JSON.stringify(dataPut)
+		var dataBaru = this.jsonString.replace(this.jsonBaruString, dataPut)
+		dataBaru = JSON.parse(dataBaru)
+		return dataBaru
 	}
 
 	post(dataPost){

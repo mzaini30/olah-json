@@ -6,7 +6,10 @@ html
     title Olah JSON
   body
     //- script(src="vconsole/vconsole.min.js")
-    script
-      include:uglify-js:babel(presets=["env"]) data.js
-      include:babel(presets=["env"]) ../olahJson.js
-      include:uglify-js:babel(presets=["env"]) app.js
+    //- script
+    //-   include:uglify-js:babel(presets=["env"]) data.js
+    //-   include:babel(presets=["env"]) ../olahJson.js
+    //-   include:uglify-js:babel(presets=["env"]) app.js
+    script(src='data.js')
+    script(src='../olahJson.js')
+    script(src='app.js')
