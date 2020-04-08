@@ -105,8 +105,8 @@ data.query('santri/10').put({
 
 ## TODO
 
-- [ ] Filter
-- [ ] UPDATE
-- [ ] PUT
+- [ ] Filter (yang dimulai dengan `_`)
+- [x] GET
+- [x] PUT
 - [x] DELETE
 - [ ] POST
