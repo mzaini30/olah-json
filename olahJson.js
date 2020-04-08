@@ -54,7 +54,7 @@ class OlahJson {
 
 	delete(){
 		// delete selesai
-		this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',')
+		this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',').replace(/,\]/g, ']').replace(/\[,/g, '[') // memperbaiki sintaks json
 		this.teksPemotongan = JSON.parse(this.teksPemotongan)
 		return this.teksPemotongan
 	}

@@ -100,7 +100,7 @@ var OlahJson = function () {
 		key: 'delete',
 		value: function _delete() {
 			// delete selesai
-			this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',');
+			this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',').replace(/,\]/g, ']').replace(/\[,/g, '['); // memperbaiki sintaks json
 			this.teksPemotongan = JSON.parse(this.teksPemotongan);
 			return this.teksPemotongan;
 		}
@@ -113,7 +113,7 @@ var OlahJson = function () {
 	}]);
 
 	return OlahJson;
-}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri").delete();console.log(hasilOlahan);
+}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/1").delete();console.log(hasilOlahan);
     </script>
   </body>
 </html>
