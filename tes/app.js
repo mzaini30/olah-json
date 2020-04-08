@@ -2,7 +2,7 @@
 
 var datanya = new OlahJson(data)
 
-var hasilOlahan = datanya.query('santri/1').put({
+var hasilOlahan = datanya.query('santri/10').put({
 	'nama': 'Kucing',
 	'alamat': 'Balikpapan'
 })

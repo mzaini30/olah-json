@@ -7,7 +7,7 @@
   </head>
   <body>
     <script>
-      "use strict";var data={santri:[{id:1,nama:"Zen",alamat:"Samarinda"},{id:2,nama:"Yani",alamat:"Samarinda"},{id:3,nama:"Anggi",alamat:"Samarinda"}],lomba:[{id:1,lomba:"balap karung",santri_id:1}]};'use strict';
+      "use strict";var data={santri:[{id:1,nama:"Zen",alamat:"Samarinda"},{id:3,nama:"Yani",alamat:"Samarinda"},{id:10,nama:"Anggi",alamat:"Samarinda"}],lomba:[{id:4,lomba:"balap karung",santri_id:3}]};'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -100,15 +100,15 @@ var OlahJson = function () {
 		key: 'delete',
 		value: function _delete() {
 			// delete selesai
-			this.teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',').replace(/,\]/g, ']').replace(/\[,/g, '['); // memperbaiki sintaks json
-			this.teksPemotongan = JSON.parse(this.teksPemotongan);
-			return this.teksPemotongan;
+			var teksPemotongan = this.jsonString.replace(this.jsonBaruString, '').replace(/,,/g, ',').replace(/,\]/g, ']').replace(/\[,/g, '['); // memperbaiki sintaks json
+			teksPemotongan = JSON.parse(teksPemotongan);
+			return teksPemotongan;
 		}
 	}, {
 		key: 'put',
 		value: function put(dataPut) {
-			this.dataPut = dataPut;
-			return this.dataPut;
+			var pisah = this.querynya.split('/')[1];
+			return pisah;
 		}
 	}, {
 		key: 'post',
@@ -116,7 +116,7 @@ var OlahJson = function () {
 	}]);
 
 	return OlahJson;
-}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/1").put({nama:"Kucing",alamat:"Balikpapan"});console.log(hasilOlahan);
+}();"use strict";var datanya=new OlahJson(data),hasilOlahan=datanya.query("santri/10").put({nama:"Kucing",alamat:"Balikpapan"});console.log(hasilOlahan);
     </script>
   </body>
 </html>

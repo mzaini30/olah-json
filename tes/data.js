@@ -6,21 +6,21 @@ var data = {
 			"alamat": "Samarinda"
 		},
 		{
-			"id": 2,
+			"id": 3,
 			"nama": "Yani",
 			"alamat": "Samarinda"
 		},
 		{
-			"id": 3,
+			"id": 10,
 			"nama": "Anggi",
 			"alamat": "Samarinda"
 		}
 	],
 	"lomba": [
 		{
-			"id": 1,
+			"id": 4,
 			"lomba": "balap karung",
-			"santri_id": 1
+			"santri_id": 3
 		}
 	]
 }
