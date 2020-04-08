@@ -57,28 +57,30 @@ var data = {
 ## Getting started (contohnya)
 
 ```javascript
-var datanya = new OlahJson(data)
-
-var hasilOlahan = datanya.query('santri?nama=zen&alamat=samarinda&id=1').get()
-
-// Hasil:
-// [
-//   {
-//     "id": 1,
-//     "nama": "Zen",
-//     "alamat": "Samarinda"
-//   }
-// ]
-
-// Contoh lain: "santri/2"
-// Hasil:
-// [
-//   {
-//     "id": 2,
-//     "nama": "Yani",
-//     "alamat": "Samarinda"
-//   }
-// ]
+var data = {
+  "santri": [
+    {
+      "id": 1,
+      "nama": "Zen",
+      "alamat": "Samarinda"
+    },
+    {
+      "id": 3,
+      "nama": "Yani",
+      "alamat": "Samarinda"
+    }
+  ],
+  "lomba": [
+    {
+      "id": 4,
+      "lomba": "balap karung",
+      "santri_id": 3
+    }
+  ]
+}
+var datanya = new OlahJson(data) // harus pakai new OlahJson()
+var hasilOlahan = datanya.query('santri?nama=zen&alamat=samarinda').get() // pakai get() di paling akhir
+console.log(hasilOlahan)
 ```
 
 ## Contoh query yang lain
