@@ -26,8 +26,9 @@ class OlahJson {
 			}
 			for (var x of pisahDan){
 				if (!x[0].startsWith('_')){ // jika nggak diawali dengan _
-					// selektor = selektor.filter(data => eval(`data.${x[0]}`) == x[1])
-					selektor = selektor.filter(data => eval(`data.${x[0]}.toString().toLowerCase().includes('${x[1]}'.toString().toLowerCase())`))
+					selektor = selektor.filter(data => eval(`data.${x[0]}.toString().toLowerCase()`) == eval(`${x[1]}.toString().toLowerCase()`))
+					// di bawah ini untuk q aja
+					// selektor = selektor.filter(data => eval(`data.${x[0]}.toString().toLowerCase().includes('${x[1]}'.toString().toLowerCase())`))
 				} else { // jika diawali dengan _
 					if (x[0] == '_q'){
 	
